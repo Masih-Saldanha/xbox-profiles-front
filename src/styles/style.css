@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #257B29;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
