@@ -30,7 +30,7 @@ export default function GamerTag(props) {
 }
 
 const GamerTagSquare = styled.section`
-  background: #47a54b;
+  background: green;
   border: 1px solid #000000;
   border-radius: 10px;
   padding: 10px;

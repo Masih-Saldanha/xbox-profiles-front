@@ -1,15 +1,25 @@
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
+import networkRequests from "../actions/networkRequests";
+
 export default function SearchGamerTag(props) {
-  const { gamerTag, setGamerTag } = props;
-  const navigate = useNavigate();
+  const { gamerTag, setGamerTag, setGamerTagInformation, setAchievementsList } =
+    props;
 
   function handleButton() {
-    console.log(gamerTag);
-    navigate("/");
+    networkRequests
+      .getAccountAndAchievementsData(gamerTag)
+      .then((response) => {
+        console.log(response.data);
+        setGamerTagInformation(response.data.gamerTagData);
+        setAchievementsList(response.data.achievementList)
+      })
+      .catch((e) => {
+        alert(e.response.data);
+        console.log(e.response.data);
+      });
   }
-  
+
   return (
     <>
       <GamerTagInput

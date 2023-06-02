@@ -1,35 +1,10 @@
 import axios from "axios";
-// import jwt_decode from "jwt-decode";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-// function getAxiosConfig(token) {
-//   return {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   };
-// };
-
-// function returnDecodedToken(token) {
-//   if (!token) {
-//     return null;
-//   };
-//   return jwt_decode(token);
-// };
-
-// function signUp(username, password) {
-//   return axios.post(`${BASE_URL}/auth/signup`, { username, password });
-// };
-
-// function signIn(username, password) {
-//   return axios.post(`${BASE_URL}/auth/signin`, { username, password });
-// };
-
-// function postText(comment, userId, token) {
-//   const config = getAxiosConfig(token);
-//   return axios.post(`${BASE_URL}/comment/register`, { comment, userId }, config);
-// };
+function getAccountAndAchievementsData(gamertag) {
+  return axios.get(`${BASE_URL}/accountandachievements/${gamertag}`);
+};
 
 function getAccountData(gamertag) {
   return axios.get(`${BASE_URL}/accountdata/${gamertag}`);
@@ -56,6 +31,7 @@ function getFriendsList(gamertag) {
 };
 
 const networkRequests = {
+  getAccountAndAchievementsData,
   getAccountData,
   getAchievements,
   getLastAchievements,

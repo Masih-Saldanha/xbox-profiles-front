@@ -43,7 +43,7 @@ export default function Game(props) {
         <img src={displayImage}></img>
         <div>
           <h1>{name}</h1>
-          <h1>{isGamePass ? <h1>GamePass On</h1> : <h1>GamePass Off</h1>}</h1>
+          {isGamePass ? <h1>GamePass On</h1> : <h1>GamePass Off</h1>}
           <h1>Última vez que jogou: {formattedDate}</h1>
         </div>
       </section>

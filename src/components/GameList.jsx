@@ -7,7 +7,7 @@ export default function GameList(props) {
   return (
     <Menu>
       <GamerTag gamerTagInformation={gamerTagInformation}></GamerTag>
-      <LineButtons>
+      {/* <LineButtons>
         <OrderButton>GameScore ⬆️</OrderButton>
         <OrderButton>A-Z</OrderButton>
         <OrderButton>Tempo de jogo ⬆️</OrderButton>
@@ -16,7 +16,7 @@ export default function GameList(props) {
         <OrderButton>GameScore ⬇️️</OrderButton>
         <OrderButton>Z-A</OrderButton>
         <OrderButton>Tempo de jogo ⬇️</OrderButton>
-      </LineButtons>
+      </LineButtons> */}
       {achievementsList.map((game) => {
         const {
           titleId,
